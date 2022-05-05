@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "c4f7558a-420d-47be-b798-efc0fbbd932c",
+		"name": "Car Mechanic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}api/customer",
+					"host": [
+						"{{HOST}}api"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST -  service-request/?customerId=6&vehicleId=2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"comment\": \"Test, dodanie do customera 9\",\r\n  \"discount\": 0,\r\n  \"done\": false,\r\n  \"finishTime\": \"2022-04-10T18:05:05.178Z\",\r\n  \"price\": 1000,\r\n  \"startTime\": \"2022-04-10T18:05:05.178Z\",\r\n  \"title\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/service-request/?customerId=9&vehicleId=2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"service-request",
+						""
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "9"
+						},
+						{
+							"key": "vehicleId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - service-request/?customerId=",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/service-request/?customerId=6",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"service-request",
+						""
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - service-request/?vehicleId=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/service-request/?vehicleId=2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"service-request",
+						""
+					],
+					"query": [
+						{
+							"key": "vehicleId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - vehicle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}api/vehicle",
+					"host": [
+						"{{HOST}}api"
+					],
+					"path": [
+						"vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - vehicle by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}api/vehicle/2",
+					"host": [
+						"{{HOST}}api"
+					],
+					"path": [
+						"vehicle",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
