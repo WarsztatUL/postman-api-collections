@@ -6,144 +6,246 @@
 	},
 	"item": [
 		{
-			"name": "GET - customer",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}api/customer",
-					"host": [
-						"{{HOST}}api"
-					],
-					"path": [
-						"customer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST -  service-request/?customerId=6&vehicleId=2",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"comment\": \"Test, dodanie do customera 9\",\r\n  \"discount\": 0,\r\n  \"done\": false,\r\n  \"finishTime\": \"2022-04-10T18:05:05.178Z\",\r\n  \"price\": 1000,\r\n  \"startTime\": \"2022-04-10T18:05:05.178Z\",\r\n  \"title\": \"string\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "vehicle",
+			"item": [
+				{
+					"name": "GET - vehicle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}api/vehicle",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"vehicle"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{HOST}}/api/service-request/?customerId=9&vehicleId=2",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"service-request",
-						""
-					],
-					"query": [
-						{
-							"key": "customerId",
-							"value": "9"
+				{
+					"name": "GET - vehicle by customerId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GET - vehicle by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}api/vehicle/2",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"vehicle",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bodyType\": \"COMBI\",\r\n  \"brand\": \"Mercedes\",\r\n  \"color\": \"string\",\r\n  \"engine\": {\r\n    \"capacity\": 0,\r\n    \"fuel\": \"CNG\",\r\n    \"power\": 0\r\n  },\r\n  \"firstRegistrationDate\": \"2022-05-06\",\r\n  \"licensePlate\": \"string\",\r\n  \"mileage\": 0,\r\n  \"model\": \"string\",\r\n  \"prodYear\": 0,\r\n  \"vin\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "vehicleId",
-							"value": "2"
+						"url": {
+							"raw": "{{HOST}}api/vehicle?customerId=9",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "9"
+								}
+							]
 						}
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "GET - service-request/?customerId=",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}/api/service-request/?customerId=6",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"service-request",
-						""
-					],
-					"query": [
-						{
-							"key": "customerId",
-							"value": "6"
+			"name": "customer",
+			"item": [
+				{
+					"name": "GET - customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}api/customer",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"customer"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET - service-request/?vehicleId=2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}/api/service-request/?vehicleId=2",
-					"host": [
-						"{{HOST}}"
-					],
-					"path": [
-						"api",
-						"service-request",
-						""
-					],
-					"query": [
-						{
-							"key": "vehicleId",
-							"value": "2"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - customer by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}api/customer/9",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"customer",
+								"9"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "POST - customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": {\r\n    \"city\": \"string\",\r\n    \"flatNo\": 0,\r\n    \"postalCode\": \"string\",\r\n    \"street\": \"string\",\r\n    \"streetNo\": 0\r\n  },\r\n  \"company\": false,\r\n  \"companyName\": \"dodane testowo\",\r\n  \"companyNip\": \"929852\",\r\n  \"email\": \"comp@gmail.com\",\r\n  \"lastName\": \"firma\",\r\n  \"name\": \"firma\",\r\n  \"phoneNo\": \"951511212\",\r\n  \"secondPhoneNo\": \"151515151\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}api/customer",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "GET - vehicle",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}api/vehicle",
-					"host": [
-						"{{HOST}}api"
-					],
-					"path": [
-						"vehicle"
-					]
+			"name": "service-request",
+			"item": [
+				{
+					"name": "POST -  service-request/?customerId=6&vehicleId=2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"Test, dodanie do customera 9\",\r\n  \"discount\": 0,\r\n  \"done\": false,\r\n  \"finishTime\": \"2022-04-10T18:05:05.178Z\",\r\n  \"price\": 1000,\r\n  \"startTime\": \"2022-04-10T18:05:05.178Z\",\r\n  \"title\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/service-request/?customerId=9&vehicleId=13",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"service-request",
+								""
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "9"
+								},
+								{
+									"key": "vehicleId",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - service-request?customerId=",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/service-request?customerId=8&vehicleId=23",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"service-request"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "8"
+								},
+								{
+									"key": "vehicleId",
+									"value": "23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - service-request/?vehicleId=2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/service-request/?vehicleId=2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"service-request",
+								""
+							],
+							"query": [
+								{
+									"key": "vehicleId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET - vehicle by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}api/vehicle/2",
-					"host": [
-						"{{HOST}}api"
-					],
-					"path": [
-						"vehicle",
-						"2"
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
