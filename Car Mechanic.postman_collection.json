@@ -58,7 +58,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"bodyType\": \"COMBI\",\r\n  \"brand\": \"Mercedes\",\r\n  \"color\": \"string\",\r\n  \"engine\": {\r\n    \"capacity\": 0,\r\n    \"fuel\": \"CNG\",\r\n    \"power\": 0\r\n  },\r\n  \"firstRegistrationDate\": \"2022-05-06\",\r\n  \"licensePlate\": \"string\",\r\n  \"mileage\": 0,\r\n  \"model\": \"string\",\r\n  \"prodYear\": 0,\r\n  \"vin\": \"string\"\r\n}",
+							"raw": "{\r\n    \"bodyType\": \"COMBI\",\r\n    \"brand\": \"Mercedes\",\r\n    \"color\": \"string\",\r\n    \"engine\": {\r\n        \"capacity\": 0,\r\n        \"fuel\": \"CNG\",\r\n        \"power\": 0\r\n    },\r\n    \"firstRegistrationDate\": \"2022-05-06\",\r\n    \"licensePlate\": \"string\",\r\n    \"mileage\": 0,\r\n    \"model\": \"string\",\r\n    \"prodYear\": 0,\r\n    \"vin\": \"string\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -78,6 +78,32 @@
 									"key": "customerId",
 									"value": "9"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bodyType\": \"COUPE\",\r\n    \"brand\": \"Fiat\",\r\n    \"color\": \"red\",\r\n    \"engine\": {\r\n        \"capacity\": 0,\r\n        \"fuel\": \"CNG\",\r\n        \"power\": 0\r\n    },\r\n    \"id\": 1,\r\n    \"firstRegistrationDate\": \"2022-05-06\",\r\n    \"licensePlate\": \"string\",\r\n    \"mileage\": 0,\r\n    \"model\": \"126p\",\r\n    \"prodYear\": 1980,\r\n    \"vin\": \"VIN testowy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}api/vehicle",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"vehicle"
 							]
 						}
 					},
@@ -130,7 +156,33 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"address\": {\r\n    \"city\": \"string\",\r\n    \"flatNo\": 0,\r\n    \"postalCode\": \"string\",\r\n    \"street\": \"string\",\r\n    \"streetNo\": 0\r\n  },\r\n  \"company\": false,\r\n  \"companyName\": \"dodane testowo\",\r\n  \"companyNip\": \"929852\",\r\n  \"email\": \"comp@gmail.com\",\r\n  \"lastName\": \"firma\",\r\n  \"name\": \"firma\",\r\n  \"phoneNo\": \"951511212\",\r\n  \"secondPhoneNo\": \"151515151\"\r\n}",
+							"raw": "{\r\n    \"address\": {\r\n        \"city\": \"string\",\r\n        \"flatNo\": 0,\r\n        \"postalCode\": \"string\",\r\n        \"street\": \"string\",\r\n        \"streetNo\": 0\r\n    },\r\n    \"company\": false,\r\n    \"companyName\": \"dodane testowo\",\r\n    \"companyNip\": \"929852\",\r\n    \"email\": \"comp@gmail.com\",\r\n    \"lastName\": \"firma\",\r\n    \"name\": \"firma\",\r\n    \"phoneNo\": \"951511212\",\r\n    \"secondPhoneNo\": \"151515151\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}api/customer",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": {\r\n        \"city\": \"string\",\r\n        \"flatNo\": 0,\r\n        \"postalCode\": \"inna ulica po edycji\",\r\n        \"street\": \"string\",\r\n        \"streetNo\": 0\r\n    },\r\n    \"id\": 6,\r\n    \"company\": false,\r\n    \"companyName\": \"dodane testowo\",\r\n    \"companyNip\": \"929852\",\r\n    \"email\": \"edytowany \",\r\n    \"lastName\": \"Zaczek\",\r\n    \"name\": \"Artur\",\r\n    \"phoneNo\": \"951511212\",\r\n    \"secondPhoneNo\": \"151515151\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -240,6 +292,33 @@
 									"key": "vehicleId",
 									"value": "2"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - service-request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 12,\r\n    \"comment\": \"Test, dodanie do customera 9\",\r\n    \"discount\": 0,\r\n    \"done\": false,\r\n    \"finishTime\": \"2022-04-10T18:05:05.178Z\",\r\n    \"price\": 1000,\r\n    \"startTime\": \"2022-04-10T18:05:05.178Z\",\r\n    \"title\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/service-request",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"service-request"
 							]
 						}
 					},
