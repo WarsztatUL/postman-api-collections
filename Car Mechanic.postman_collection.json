@@ -29,7 +29,22 @@
 					"name": "GET - vehicle by customerId",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}api/vehicle?customerId=20",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "20"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -39,13 +54,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}api/vehicle/2",
+							"raw": "{{HOST}}api/vehicle/15",
 							"host": [
 								"{{HOST}}api"
 							],
 							"path": [
 								"vehicle",
-								"2"
+								"15"
 							]
 						}
 					},
@@ -90,7 +105,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bodyType\": \"COUPE\",\r\n    \"brand\": \"Fiat\",\r\n    \"color\": \"red\",\r\n    \"engine\": {\r\n        \"capacity\": 0,\r\n        \"fuel\": \"CNG\",\r\n        \"power\": 0\r\n    },\r\n    \"id\": 1,\r\n    \"firstRegistrationDate\": \"2022-05-06\",\r\n    \"licensePlate\": \"string\",\r\n    \"mileage\": 0,\r\n    \"model\": \"126p\",\r\n    \"prodYear\": 1980,\r\n    \"vin\": \"VIN testowy\"\r\n}",
+							"raw": "{\r\n    \"bodyType\": \"COUPE\",\r\n    \"brand\": \"Fiat\",\r\n    \"color\": \"red\",\r\n    \"engine\": {\r\n        \"capacity\": 0,\r\n        \"fuel\": \"CNG\",\r\n        \"power\": 0\r\n    },\r\n    \"id\": 15,\r\n    \"firstRegistrationDate\": \"2022-05-06\",\r\n    \"licensePlate\": \"string\",\r\n    \"mileage\": 0,\r\n    \"model\": \"126p\",\r\n    \"prodYear\": 1980,\r\n    \"vin\": \"VIN testowy\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -200,6 +215,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "PATCH - bind new vehicle with customer",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}api/customer/20/vehicle/17",
+							"host": [
+								"{{HOST}}api"
+							],
+							"path": [
+								"customer",
+								"20",
+								"vehicle",
+								"17"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -245,7 +280,7 @@
 					"response": []
 				},
 				{
-					"name": "GET - service-request?customerId=",
+					"name": "GET - service-request",
 					"request": {
 						"method": "GET",
 						"header": [],
